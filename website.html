@@ -168,18 +168,8 @@
 </head>
 <body oncontextmenu="return false;" onkeydown="return blockKeys(event);">
 
-<!-- 🔒 PASSWORD LOCK — ALWAYS REQUIRED -->
-<div id="password-screen">
-    <div class="password-box">
-        <h2>🔐 请输入密码</h2>
-        <input type="password" id="password-input" placeholder="输入密码..." onkeypress="if(event.key==='Enter') checkPassword()">
-        <button onclick="checkPassword()">进入网站</button>
-        <p class="error-msg" id="wrong-pass">❌ 密码错误，请重试</p>
-    </div>
-</div>
-
 <!-- ✅ MAIN WEBSITE -->
-<div id="main-site">
+<div id="main-site" style="display:block;">
 
 <header>
     <h1>2A班级网站2026-2027</h1>
@@ -262,8 +252,8 @@
         <h2>📁 共享文件</h2>
         <p style="margin-bottom:1rem;"><strong>点击文件夹名称展开/收起文件列表</strong></p>
 
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">📂 电子版教材</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">📂 电子版教材</div>
             <div class="folder-content">
                 <div class="file-item">📄 <a href="课本.pdf"_blank">课本</a></div>
                 <div class="file-item">📄 <a href="练习册A.pdf" target="_blank">练习册A</a></div>
@@ -271,24 +261,148 @@
             </div>
         </div>
 
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">📂 教学材料</div>
+
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">📂 课堂笔记</div>
+            <div class="folder-content">
+                <!-- ⚠️ NOTE AT TOP OF FOLDER -->
+                <div style="padding: 1rem; background: #fff9e6; border-bottom: 1px solid #e0e7ef; color: #555;">
+                    💡 这些课堂笔记都是老师上课前提前准备在课堂PPT上，课堂上老师任何手写的笔记将不包含在里面。
+                </div>
+
+                <div class="file-item note-locked" data-release="2026-09-12T15:30:00">
+                    <a href="1.93842.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第1课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-09-12 15:30
+                    </span>
+                </div>
+
+
+                <div class="file-item note-locked" data-release="2026-10-03T15:30:00">
+                    <a href="2.84753.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第2课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-10-03 15:30
+                    </span>
+                </div>
+
+                
+                <div class="file-item note-locked" data-release="2026-10-24T15:30:00">
+                    <a href="3.28749.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第3课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-10-24 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2026-11-07T15:30:00">
+                    <a href="4.84375.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第4课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-11-07 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2026-11-21T15:30:00">
+                    <a href="5.12839.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第5课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-11-21 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2026-12-05T15:30:00">
+                    <a href="6.82911.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第6课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-12-05 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-01-16T15:30:00">
+                    <a href="7.08283.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第7课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2027-01-16 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-02-13T15:30:00">
+                    <a href="8.08822.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第8课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2027-02-13 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-02-27T15:30:00">
+                    <a href="9.28749.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第9课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2027-02-27 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-03-13T15:30:00">
+                    <a href="10.97263.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第10课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2027-03-13 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-04-17T15:30:00">
+                    <a href="11.90822.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第11课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2027-04-17 15:30
+                    </span>
+                </div>
+
+                <div class="file-item note-locked" data-release="2027-05-01T15:30:00">
+                    <a href="12.97261.pdf" target="_blank" style="pointer-events: none; color: #999;">
+                        📄 第12课 课堂笔记
+                    </a>
+                    <span class="release-status" style="color: #d32f2f; margin-left: 0.5rem;">
+                        🔒 发布时间：2026-05-01 15:30
+                    </span>
+                </div>
+             </div>
+           </div>
+
+
+
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">📂 教学材料</div>
             <div class="folder-content">
                 <div class="file-item">📄 <a href="作业例子.png" target="_blank">作业例子</a></div>
                 <div class="file-item">📄 <a href="2A班级才艺表演歌词.pdf" target="_blank">2A班级才艺表演歌词</a></div>
             </div>
         </div>
 
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">📂 学校通知</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">📂 学校通知</div>
             <div class="folder-content">
                 <div class="file-item">📄 <a href="2026-2027开学家长学生注意事项通知.pdf" target="_blank">2026-2027开学家长学生注意事项通知</a></div>
                 <div class="file-item">📄 <a href="2026-2027学生校规.pdf" target="_blank">2026-2027学生校规</a></div>
+                <div class="file-item">📄 <a href="课外活动班1.jpg" target="_blank">课外活动班(10月24日-1月9日)</a></div>
             </div>
         </div>
         
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">📂 模拟试卷</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">📂 模拟试卷</div>
             <div class="folder-content">
             </div>
         </div>     
@@ -300,8 +414,8 @@
         <p style="margin-bottom:1rem;"><strong>点击下方展开查看各阶段教学安排</strong></p>
 
         <!-- 9–12月 -->
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">9月 - 12月</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">9月 - 12月</div>
             <div class="folder-content">
                 <div class="plan-summary">
                     <strong>📌 教学目标：</strong>本学期我们将学习6篇有趣的课文：《在中文学校》《我们的教室》《开心的一天》《讲礼貌》《过生日》《我会做的事》。每一课都结合孩子们熟悉的生活场景，在轻松愉快的氛围里，扎实学知识、培养中文兴趣、养成良好学习习惯。
@@ -379,8 +493,8 @@
         </div>
 
         <!-- 1–3月 -->
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">1月 - 3月</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">1月 - 3月</div>
             <div class="folder-content">
                 <div class="plan-summary">
                     <strong>📌 教学目标：</strong>本学期我们继续学习4篇课文：《红绿灯》《去书店》《在医院里》《春雨》，每一课都结合生活场景与自然知识，继续在趣味中培养中文听说读写能力与学习兴趣。
@@ -441,8 +555,8 @@
         </div>
 
         <!-- 4–6月 -->
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">4月 - 6月</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">4月 - 6月</div>
             <div class="folder-content">
                 <div class="plan-summary">
                     <strong>📌 教学目标：</strong>本学期我们继续学习2篇课文：《青蛙写诗》《江河》，完成课本全部内容。
@@ -499,8 +613,8 @@
         </div>
 
         <!-- 期末总成绩构成 -->
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">期末总成绩构成</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">期末总成绩构成</div>
             <div class="folder-content">
                 <div class="plan-summary">
                     <strong>📌 格拉斯哥华文学校的期末总成绩综合学生平时的各项表现评定得出，并根据总成绩确定班级前三名。具体构成如下：</strong>
@@ -553,8 +667,8 @@
         <p>我会尽量在24小时内回复；若3天内未收到回复，可再次发送提醒，避免信息遗漏。</p>
 <p>&nbsp;</p>
 <!-- 常问的问题 -->
-        <div class="folder" onclick="toggleFolder(this)">
-            <div class="folder-header">常问的问题（点击展开查看）</div>
+        <div class="folder">
+            <div class="folder-header" onclick="toggleFolder(this.parentElement)">常问的问题（点击展开查看）</div>
             <div class="folder-content">
                 <div class="plan-summary">
                     <strong>📌 这里整理了家长们常问的问题，希望以下内容能解答大家的部分疑惑。</strong>
@@ -612,7 +726,7 @@
 </main>
 
 <footer>
-    &copy; 2A班级网站2026-2027 · 更新日期：2026年9月
+    &copy; 2A班级网站2026-2027 · 更新日期：2026年10月
 </footer>
 
 </div><!-- End of Main Site -->
@@ -633,22 +747,6 @@
         return true;
     }
 
-    // ==================================================
-    // 🔒 SET YOUR PASSWORD HERE
-    // ==================================================
-    const CORRECT_PASSWORD = '0102'; // ✅ CHANGE THIS TO YOUR OWN PASSWORD
-    // ==================================================
-
-    function checkPassword() {
-        const input = document.getElementById('password-input').value;
-        if (input === CORRECT_PASSWORD) {
-            document.getElementById('password-screen').style.display = 'none';
-            document.getElementById('main-site').style.display = 'block';
-        } else {
-            document.getElementById('wrong-pass').style.display = 'block';
-            document.getElementById('password-input').value = '';
-        }
-    }
 
     // ========== ⚠️ UPDATE YOUR EMAIL ==========
     const YOUR_EMAIL = 'cren.gcs@hotmail.com';
@@ -775,6 +873,34 @@
 
     renderHomework();
     renderHolidays();
+
+    // ==================================================
+    // 🔒 LOCKED CLASS NOTES — AUTO-UNLOCK AFTER RELEASE TIME
+    // ==================================================
+    function checkReleasedNotes() {
+        const now = new Date();
+        document.querySelectorAll('.note-locked').forEach(item => {
+            const releaseStr = item.getAttribute('data-release');
+            if (!releaseStr) return;
+            
+            const releaseTime = new Date(releaseStr);
+            const link = item.querySelector('a');
+            const status = item.querySelector('.release-status');
+            
+            if (now >= releaseTime) {
+                // ✅ Time passed — unlock and look like normal file
+                link.style.pointerEvents = 'auto';
+                link.style.color = '#0066cc';
+                if (status) status.remove();
+                item.classList.remove('note-locked');
+            }
+        });
+    }
+    
+    // Run immediately and check every minute
+    checkReleasedNotes();
+    setInterval(checkReleasedNotes, 60000);
+
 </script>
 
 </body>
